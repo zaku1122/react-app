@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export function HomePage() {
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+   
 
     useEffect(() => {
 axios.get('http://localhost:3000/api/products')
@@ -13,10 +13,7 @@ axios.get('http://localhost:3000/api/products')
         setProducts(response.data);
     });
 
-    axios.get('http://localhost:3000/api/cart-items')
-    .then( (response) => {
-        setCart(response.data);
-    })
+    
     },[])
     
 
